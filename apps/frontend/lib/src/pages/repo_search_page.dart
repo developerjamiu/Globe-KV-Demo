@@ -18,7 +18,7 @@ class _RepoSearchPageState extends State<RepoSearchPage> {
     if (_formKey.currentState!.validate()) {
       final org = Uri.encodeComponent(_orgController.text.trim());
       final repo = Uri.encodeComponent(_repoController.text.trim());
-      context.go('/stats/$org/$repo');
+      context.go('/stats?org=$org&repo=$repo');
     }
   }
 
