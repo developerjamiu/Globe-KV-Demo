@@ -1,16 +1,17 @@
-# frontend
+# GitHub Repository Stats Frontend
 
-A new Flutter project.
+A Flutter web application for viewing GitHub repository statistics.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **URL-based Routing**: The app now supports proper URL routing with the following paths:
 
-A few resources to get you started if this is your first Flutter project:
+  - `/` - Home page with repository search form
+  - `/stats/:org/:repo` - Repository stats page (e.g., `/stats/flutter/flutter`)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Direct URL Access**: You can now directly access repository stats by visiting URLs like:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  - `https://repo-stats.globeapp.dev/stats/flutter/flutter`
+  - `https://repo-stats.globeapp.dev/stats/facebook/react`
+
+- **Navigation**: The app includes a back button on the stats page to return to the search form.

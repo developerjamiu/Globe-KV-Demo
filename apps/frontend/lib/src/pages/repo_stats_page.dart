@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:frontend/src/models/repo_stats.dart';
 import 'package:frontend/src/providers/stats_provider.dart';
 import 'package:frontend/src/widgets/repo_stats_data.dart';
@@ -23,6 +24,15 @@ class RepoStatsPage extends ConsumerWidget {
     );
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('$orgName/$repoName'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.go('/'),
+        ),
+      ),
       body: Center(
         child: SingleChildScrollView(
           child: ConstrainedBox(

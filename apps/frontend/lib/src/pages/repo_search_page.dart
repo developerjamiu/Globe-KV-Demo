@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:frontend/src/pages/repo_stats_page.dart';
+import 'package:go_router/go_router.dart';
 
 class RepoSearchPage extends StatefulWidget {
   const RepoSearchPage({super.key});
@@ -17,15 +16,9 @@ class _RepoSearchPageState extends State<RepoSearchPage> {
 
   void _searchRepository() {
     if (_formKey.currentState!.validate()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => RepoStatsPage(
-            orgName: _orgController.text.trim(),
-            repoName: _repoController.text.trim(),
-          ),
-        ),
-      );
+      final org = Uri.encodeComponent(_orgController.text.trim());
+      final repo = Uri.encodeComponent(_repoController.text.trim());
+      context.go('/stats/$org/$repo');
     }
   }
 

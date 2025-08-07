@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/src/pages/repo_search_page.dart';
+import 'package:frontend/src/router.dart';
 
 class RepoStatsApp extends StatelessWidget {
   const RepoStatsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Repo Stats',
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -14,7 +14,7 @@ class RepoStatsApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF121212),
       ),
       debugShowCheckedModeBanner: false,
-      home: const RepoSearchPage(),
+      routerConfig: AppRouter.router,
     );
   }
 }
